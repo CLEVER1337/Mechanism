@@ -5,7 +5,7 @@ QT += opengl
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-
+#ddd#
 
 #external libs#
 LIBS += -lopengl32

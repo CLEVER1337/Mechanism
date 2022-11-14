@@ -1,9 +1,9 @@
 # WOW It's MECHANISM
 
 ## Paste for new files
-/*
-*FILE NAME - 
-*MAIN NAMESPACE - 
-*MAIN CLASS - 
-*AUTHOR - 
+/*\n
+*FILE NAME - \n
+*MAIN NAMESPACE - \n
+*MAIN CLASS - \n
+*AUTHOR - \n
 */

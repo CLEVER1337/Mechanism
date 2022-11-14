@@ -1,6 +1,6 @@
-#WOW It's MECHANISM
+# WOW It's MECHANISM
 
-##Paste for new files
+## Paste for new files
 /*
 *FILE NAME - 
 *MAIN NAMESPACE - 

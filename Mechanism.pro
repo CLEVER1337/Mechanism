@@ -17,11 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 #source files#
 SOURCES += \
-    src/main.cpp \
+    src/MainOpenGLClass.cpp \
+    src/Main.cpp \
     src/MainWindow.cpp
 
 #header files#
 HEADERS += \
+    include/MainOpenGLClass.h \
     include/MainWindow.h
 
 #form files#

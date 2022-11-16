@@ -19,12 +19,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     src/MainOpenGLClass.cpp \
     src/Main.cpp \
-    src/MainWindow.cpp
+    src/MainWindow.cpp \
+    src/ShaderProgram.cpp \
+    src/TextureLoader.cpp
 
 #header files#
 HEADERS += \
     include/MainOpenGLClass.h \
-    include/MainWindow.h
+    include/MainWindow.h \
+    include/ShaderProgram.h \
+    include/TextureLoader.h
 
 #form files#
 FORMS += \

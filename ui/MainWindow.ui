@@ -154,8 +154,8 @@
      <string/>
     </property>
     <property name="icon">
-     <iconset>
-      <normaloff>C:/Users/mrlib/Downloads/save-file.png</normaloff>C:/Users/mrlib/Downloads/save-file.png</iconset>
+     <iconset resource="../resources/Icons.qrc">
+      <normaloff>:/ICONS/SaveFileButton.png</normaloff>:/ICONS/SaveFileButton.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -170,7 +170,7 @@
      <bool>false</bool>
     </property>
     <property name="default">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="flat">
      <bool>true</bool>
@@ -185,18 +185,24 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
-     <iconset>
-      <normaloff>C:/Users/mrlib/Downloads/670-6706313_plus-button-green.png</normaloff>C:/Users/mrlib/Downloads/670-6706313_plus-button-green.png</iconset>
+     <iconset resource="../resources/Icons.qrc">
+      <normaloff>:/ICONS/PlusObjectButton.png</normaloff>:/ICONS/PlusObjectButton.png</iconset>
     </property>
     <property name="iconSize">
      <size>
       <width>25</width>
       <height>25</height>
      </size>
+    </property>
+    <property name="default">
+     <bool>false</bool>
     </property>
     <property name="flat">
      <bool>true</bool>
@@ -211,6 +217,8 @@
    <header>MainOpenGLClass.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../resources/Icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

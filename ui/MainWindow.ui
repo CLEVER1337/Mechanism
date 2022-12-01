@@ -56,9 +56,9 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-5</x>
       <y>30</y>
-      <width>31</width>
+      <width>50</width>
       <height>651</height>
      </rect>
     </property>
@@ -86,9 +86,9 @@
     <property name="geometry">
      <rect>
       <x>31</x>
-      <y>569</y>
+      <y>559</y>
       <width>769</width>
-      <height>31</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -111,9 +111,9 @@
    <widget class="Line" name="right">
     <property name="geometry">
      <rect>
-      <x>769</x>
+      <x>709</x>
       <y>31</y>
-      <width>31</width>
+      <width>91</width>
       <height>569</height>
      </rect>
     </property>
@@ -137,7 +137,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>60</x>
       <y>0</y>
       <width>31</width>
       <height>31</height>
@@ -179,7 +179,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>110</x>
       <y>0</y>
       <width>31</width>
       <height>31</height>
@@ -206,6 +206,144 @@
     </property>
     <property name="flat">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="Line" name="line1">
+    <property name="geometry">
+     <rect>
+      <x>709</x>
+      <y>29</y>
+      <width>111</width>
+      <height>10</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>701</x>
+      <y>-7</y>
+      <width>16</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>26</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>2</x>
+      <y>7</y>
+      <width>40</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Nft Opensea</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color : rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>LAB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>716</x>
+      <y>9</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Nft Opensea</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white</string>
+    </property>
+    <property name="text">
+     <string>Objects</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>-12</y>
+      <width>31</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>45</x>
+      <y>550</y>
+      <width>665</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_5">
+    <property name="geometry">
+     <rect>
+      <x>689</x>
+      <y>30</y>
+      <width>41</width>
+      <height>530</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_6">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>26</y>
+      <width>671</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>

@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>ICONS/PlusObjectButton.png</file>
         <file>ICONS/SaveFileButton.png</file>
+        <file>ICONS/SaveButton.png</file>
     </qresource>
 </RCC>

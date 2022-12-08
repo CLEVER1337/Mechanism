@@ -5,29 +5,36 @@
 #include <QOpenGLFunctions_3_3_Core>
 #include <QImage>
 
-
-
 namespace nsUtility
 {
 class TextureLoader
 {
 public:
-    TextureLoader();
     /*!
-     * \fn TextureLoader(QOpenGLFunctions_3_3_Core &gl, const char* textureFileNmae)
+     * \fn TextureLoader()
      * \brief This constructor createing texture
     */
-    TextureLoader(QOpenGLFunctions_3_3_Core &gl, const char* textureFileNmae);
+    TextureLoader();
     /*!
-     * \fn TextureLoader(QOpenGLFunctions_3_3_Core &gl, const char* textureFileNmae)
+     * \fn TextureLoader(QOpenGLFunctions_3_3_Core &gl, const char* textureFileName)
+     * \brief This constructor createing texture
+    */
+    TextureLoader(QOpenGLFunctions_3_3_Core &gl, const char* textureFileName);
+    /*!
+     * \fn void ActivateTexture(QOpenGLFunctions_3_3_Core &gl, GLuint shaderProgram, const char* textureUniformName, GLenum texture, int id)
      * \brief This function activate texture
     */
     void ActivateTexture(QOpenGLFunctions_3_3_Core &gl, GLuint shaderProgram, const char* textureUniformName, GLenum texture, int id);
     /*!
-     * \fn TextureLoader(QOpenGLFunctions_3_3_Core &gl, const char* textureFileNmae)
+     * \fn void CreateTexture(QOpenGLFunctions_3_3_Core &gl, const char* textureFileNmae)
      * \brief This function createing texture
     */
     void CreateTexture(QOpenGLFunctions_3_3_Core &gl, const char* textureFileNmae);
+    /*!
+     * \fn GLuint GetTextureId()
+     * \brief Getter for texture id
+    */
+    GLuint GetTextureId();
 
 private:
     GLuint texture;

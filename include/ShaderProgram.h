@@ -15,6 +15,10 @@ namespace nsUtility
 class ShaderProgram
 {
 public:
+    /*!
+     * \fn ShaderProgram()
+     * \brief This constructor creating ShaderProgram
+    */
     ShaderProgram();
     /*!
      * \fn ShaderProgram(QOpenGLFunctions_3_3_Core &gl, const char* vertexShaderFileName, const char* fragmentShaderFileName)
@@ -23,7 +27,7 @@ public:
     ShaderProgram(QOpenGLFunctions_3_3_Core &gl, const char* vertexShaderFileName, const char* fragmentShaderFileName);
     /*!
      * \fn void CreateShaderProgram(QOpenGLFunctions_3_3_Core &gl, const char* vertexShaderFileName, const char* fragmentShaderFileName)
-     * \brief This function using shader program
+     * \brief This function create shader program
     */
     void CreateShaderProgram(QOpenGLFunctions_3_3_Core &gl, const char* vertexShaderFileName, const char* fragmentShaderFileName);
     /*!

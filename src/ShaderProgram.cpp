@@ -37,8 +37,6 @@ const char* ShaderProgram::ReadVertexShader(const char* shaderFileName)
 
         file.close();
 
-        //vertexShaderStr.resize(str.size());
-
         return str.toStdString().c_str();
     }
     else
@@ -63,8 +61,6 @@ const char* ShaderProgram::ReadFragmentShader(const char* shaderFileName)
         QString str = file.readAll();
 
         file.close();
-
-        //fragmentShaderStr.resize(str.size());
 
         return str.toStdString().c_str();
     }

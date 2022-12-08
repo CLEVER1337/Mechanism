@@ -10,6 +10,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 #external libs#
 LIBS += -lopengl32
 
+LIBS += -L"$$PWD/lib" -lassimp.dll
+
 #compiler settings#
 CONFIG += c++11
 
@@ -20,6 +22,8 @@ SOURCES += \
     src/MainOpenGLClass.cpp \
     src/Main.cpp \
     src/MainWindow.cpp \
+    src/Mesh.cpp \
+    src/Model.cpp \
     src/ShaderProgram.cpp \
     src/TextureLoader.cpp
 
@@ -27,6 +31,8 @@ SOURCES += \
 HEADERS += \
     include/MainOpenGLClass.h \
     include/MainWindow.h \
+    include/Mesh.h \
+    include/Model.h \
     include/ShaderProgram.h \
     include/TextureLoader.h
 
@@ -36,13 +42,13 @@ FORMS += \
 
 #include folder#
 INCLUDEPATH += \
-    include/ \
-    include/glm/
+    include/
+
+#resources#
+RESOURCES += \
+    resource/Shaders.qrc
 
 #QT default rules#
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    resources/Shaders.qrc

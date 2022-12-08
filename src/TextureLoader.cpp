@@ -27,10 +27,10 @@ void TextureLoader::GenereteTexture(QOpenGLFunctions_3_3_Core &gl)
 {
     gl.glGenTextures(1, &texture);
     gl.glBindTexture(GL_TEXTURE_2D, texture);
-    // Set texture wrapping to GL_REPEAT (usually basic wrapping method)
+    /*Set texture wrapping to GL_REPEAT (usually basic wrapping method)*/
     gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // Set texture filtering parameters
+    /*Set texture filtering parameters*/
     gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 }
@@ -50,5 +50,11 @@ void TextureLoader::CreateTexture(QOpenGLFunctions_3_3_Core &gl, const char *tex
 {
     GenereteTexture(gl);
     LoadTexture(gl, textureFileNmae);
+}
+
+GLuint TextureLoader::GetTextureId()
+/*Giving texture id*/
+{
+    return this->texture;
 }
 }

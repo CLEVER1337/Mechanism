@@ -2,6 +2,10 @@
 
 namespace nsUtility
 {
+Camera::Camera()
+{
+}
+
 void Camera::MoveBySide(SideWay side, float deltaTime)
 {
     Update(deltaTime);

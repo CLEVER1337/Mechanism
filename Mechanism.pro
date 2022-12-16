@@ -20,6 +20,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #source files#
 SOURCES += \
     src/Camera.cpp \
+    src/Controller.cpp \
     src/MainOpenGLClass.cpp \
     src/Main.cpp \
     src/MainWindow.cpp \
@@ -31,6 +32,7 @@ SOURCES += \
 #header files#
 HEADERS += \
     include/Camera.h \
+    include/Controller.h \
     include/MainOpenGLClass.h \
     include/MainWindow.h \
     include/Mesh.h \

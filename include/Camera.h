@@ -29,10 +29,12 @@ private:
     glm::vec3 front;
     glm::vec3 up;
 
-    float pitch;
-    float yaw;
+    float pitch = 0.0;
+    float yaw = -90.0;
 
     float speed = 0.01;
+
+    float fov = 45.0;
 
     void Update(float deltaTime);
 };

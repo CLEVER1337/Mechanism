@@ -4,12 +4,15 @@ namespace nsUtility
 {
 Controller::Controller()
 {
+    /*All keys is off*/
     for(int i = 0; i < 10240; i++)
         keys[i] = false;
 }
 
 void Controller::MouseMoveControll(Camera camera, QCursor cursor, int screenHeight, int screenWidth)
+/*React to mouse move*/
 {
+    /*For infinity controll(if cursor move to screen last pixel it will be moved to center)*/
     if(cursor.pos().x() == 0)
     {
         mousePos.x -= screenWidth / 2;
@@ -31,6 +34,7 @@ void Controller::MouseMoveControll(Camera camera, QCursor cursor, int screenHeig
         cursor.setPos(cursor.pos().x(), screenWidth / 2);
     }
 
+    /*Offset between current and previous mouse's positions*/
     int xOffset = (mousePos.x - mouseLastPos.x) * sensetivity;
     int yOffset = (mousePos.y - mouseLastPos.y) * sensetivity;
 
@@ -41,6 +45,7 @@ void Controller::MouseMoveControll(Camera camera, QCursor cursor, int screenHeig
 }
 
 void Controller::KeyboardPressControll(Camera camera, float deltaTime)
+/*React when key si pressed*/
 {
     if(keys[(int)'W'])
         camera.MoveBySide(FORWARD, deltaTime);
@@ -53,11 +58,13 @@ void Controller::KeyboardPressControll(Camera camera, float deltaTime)
 }
 
 void Controller::KeyPress(int virtualKey)
+/*Press key*/
 {
     keys[virtualKey] = true;
 }
 
 void Controller::KeyRelease(int virtualKey)
+/*Release key*/
 {
     keys[virtualKey] = false;
 }

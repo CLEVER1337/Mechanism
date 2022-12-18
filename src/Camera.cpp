@@ -6,11 +6,12 @@ Camera::Camera()
 {
 }
 
-void Camera::MoveBySide(SideWay side, float deltaTime)
+void Camera::MoveBySide(Direction direction, float deltaTime)
+/*Moving camera*/
 {
     Update(deltaTime);
 
-    switch (side)
+    switch (direction)
     {
     case FORWARD:
         pos += speed * front;
@@ -28,15 +29,18 @@ void Camera::MoveBySide(SideWay side, float deltaTime)
 }
 
 void Camera::Turn(int xOffset, int yOffset)
+/*Rotating camera*/
 {
     yaw += xOffset;
     pitch += yOffset;
 
+    /*Block  y rotating to straight up and straight down*/
     if(pitch > 89.0f)
         pitch =  89.0f;
     if(pitch < -89.0f)
         pitch = -89.0f;
 
+    /*Calculate camera's front vector*/
     glm::vec3 tmpFront;
     tmpFront.x = cos(glm::radians(pitch)) * cos(glm::radians(yaw));
     tmpFront.y = sin(-glm::radians(pitch));
@@ -45,6 +49,7 @@ void Camera::Turn(int xOffset, int yOffset)
 }
 
 void Camera::Update(float deltaTime)
+/*Updating*/
 {
     speed *= deltaTime;
 }

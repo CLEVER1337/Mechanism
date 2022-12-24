@@ -4,19 +4,19 @@
 #include <QTime>
 #include <QKeyEvent>
 
-#include "MainOpenGLClass.h"
+#include "MainOpenGLWidget.h"
 
-MainOpenGLClass::MainOpenGLClass(QWidget* parent) : QOpenGLWidget(parent)
+MainOpenGLWidget::MainOpenGLWidget(QWidget* parent) : QOpenGLWidget(parent)
 {
 
 }
 
-MainOpenGLClass::~MainOpenGLClass()
+MainOpenGLWidget::~MainOpenGLWidget()
 {
 
 }
 
-void MainOpenGLClass::initializeGL()
+void MainOpenGLWidget::initializeGL()
 {
     gl.initializeOpenGLFunctions();
 
@@ -47,14 +47,14 @@ void MainOpenGLClass::initializeGL()
     fov = 45.0;
 }
 
-void MainOpenGLClass::resizeGL(int w, int h)
+void MainOpenGLWidget::resizeGL(int w, int h)
 {
     screenW = w;
     screenH = h;
     gl.glViewport(0, 0, screenW, screenH);
 }
 
-void MainOpenGLClass::paintGL()
+void MainOpenGLWidget::paintGL()
 {
     QTime time;
 
@@ -154,17 +154,17 @@ void MainOpenGLClass::paintGL()
     gl.glBindVertexArray(0);
 }
 
-void MainOpenGLClass::keyPressEvent(QKeyEvent* event)
+void MainOpenGLWidget::keyPressEvent(QKeyEvent* event)
 {
     keys[event->nativeVirtualKey()] = true;
 }
 
-void MainOpenGLClass::keyReleaseEvent(QKeyEvent* event)
+void MainOpenGLWidget::keyReleaseEvent(QKeyEvent* event)
 {
     keys[event->nativeVirtualKey()] = false;
 }
 
-void MainOpenGLClass::wheelEvent(QWheelEvent *event)
+void MainOpenGLWidget::wheelEvent(QWheelEvent *event)
 {
     if(fov >= 1.0 && fov <= 45.0)
         fov -= event->delta() / 25;
@@ -174,7 +174,7 @@ void MainOpenGLClass::wheelEvent(QWheelEvent *event)
         fov = 45.0;
 }
 
-void MainOpenGLClass::MouseMove()
+void MainOpenGLWidget::MouseMove()
 {
     float sensetivity = 0.1;
 
@@ -225,7 +225,7 @@ void MainOpenGLClass::MouseMove()
     cameraFront = glm::normalize(front);
 }
 
-void MainOpenGLClass::InitTriangle()
+void MainOpenGLWidget::InitTriangle()
 {
     float vertices[] = {
         -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
@@ -310,7 +310,7 @@ void MainOpenGLClass::InitTriangle()
     gl.glBindVertexArray(0);
 }
 
-void MainOpenGLClass::CameraMove()
+void MainOpenGLWidget::CameraMove()
 {
     float cameraSpeed = 0.01 * deltaTime;
     if(keys[(int)'W'])

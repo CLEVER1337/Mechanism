@@ -5,17 +5,17 @@
 #include <QOpenGLFunctions_3_3_Core>
 
 
-#include "glm.hpp"
-#include "gtc/matrix_transform.hpp"
-#include "gtc/type_ptr.hpp"
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
 
 #include "ShaderProgram.h"
 
-class MainOpenGLClass : public QOpenGLWidget
+class MainOpenGLWidget : public QOpenGLWidget
 {
 public:
-    MainOpenGLClass(QWidget* parent = nullptr);
-    ~MainOpenGLClass();
+    MainOpenGLWidget(QWidget* parent = nullptr);
+    ~MainOpenGLWidget();
 
     void keyPressEvent(QKeyEvent* event);
     void keyReleaseEvent(QKeyEvent *event);

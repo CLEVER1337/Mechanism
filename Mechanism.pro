@@ -21,8 +21,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     src/Camera.cpp \
     src/Controller.cpp \
-    src/MainOpenGLClass.cpp \
     src/Main.cpp \
+    src/MainOpenGLWidget.cpp \
     src/MainWindow.cpp \
     src/Mesh.cpp \
     src/Model.cpp \
@@ -33,7 +33,7 @@ SOURCES += \
 HEADERS += \
     include/Camera.h \
     include/Controller.h \
-    include/MainOpenGLClass.h \
+    include/MainOpenGLWidget.h \
     include/MainWindow.h \
     include/Mesh.h \
     include/Model.h \

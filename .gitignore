@@ -44,7 +44,7 @@ Thumbs.db
 .*.swp
 
 # Visual Studio and vscode generated files
-.vscode
+.vscode/
 *.ib_pdb_index
 *.idb
 *.ilk

@@ -17,7 +17,9 @@ class RigidBody3D
 public:
     RigidBody3D();
 
-    void Draw();
+    RigidBody3D(QOpenGLFunctions_3_3_Core &gl, glm::vec3 position, char* modelPath, const char* vertexShaderFileName, const char* fragmentShaderFileName);
+
+    void Draw(QOpenGLFunctions_3_3_Core &gl);
 
 private:
     nsGraphicsEngine::Model model;
@@ -29,6 +31,14 @@ private:
     glm::mat4 projectionMatrix;
 
     glm::vec3 globalPosition;
+
+    std::string name;
+
+    int id;
+
+    void SetupMatrices();
+
+    void SendMatrices();
 };
 }
 

@@ -3,7 +3,10 @@
 
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions_3_3_Core>
-
+#include <QtDebug>
+#include <QTimer>
+#include <QTime>
+#include <QKeyEvent>
 
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
@@ -12,6 +15,7 @@
 #include "ShaderProgram.h"
 #include "Camera.h"
 #include "Controller.h"
+#include "RigidBody3D.h"
 
 class MainOpenGLWidget : public QOpenGLWidget
 {
@@ -27,6 +31,7 @@ private:
     QOpenGLFunctions_3_3_Core gl;
 
     nsGraphicsEngine::Camera camera;
+
     nsGraphicsEngine::Controller controller;
 
     void initializeGL();
@@ -36,6 +41,8 @@ private:
     glm::vec2 screenSize;
 
     float deltaTime, lastFrameTime;
+
+    std::vector<nsGraphicsEngine::RigidBody3D> objects;
 };
 
 #endif // MAINOPENGLCLASS_H

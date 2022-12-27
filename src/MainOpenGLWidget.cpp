@@ -1,9 +1,3 @@
-#include <QOpenGLWidget>
-#include <QtDebug>
-#include <QTimer>
-#include <QTime>
-#include <QKeyEvent>
-
 #include "MainOpenGLWidget.h"
 
 MainOpenGLWidget::MainOpenGLWidget(QWidget* parent) : QOpenGLWidget(parent)
@@ -38,18 +32,21 @@ void MainOpenGLWidget::paintGL()
 {
     QTime time;
 
-    float tmpDelta = time.currentTime().msec() - lastFrameTime;
+    float deltaTimeTmp = time.currentTime().msec() - lastFrameTime;
 
-    deltaTime = tmpDelta >= 0.0 ? tmpDelta : 0.0;
+    deltaTime = deltaTimeTmp >= 0.0 ? deltaTimeTmp : 0.0;
     lastFrameTime = time.currentTime().msec();
 
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glEnable(GL_DEPTH_TEST);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
 
-    CameraMove();
+    for(int i = 0; i < objects.size(); i++)
+        objects[i].Draw(gl);
+
+    /*CameraMove();
 
 
 
@@ -131,7 +128,7 @@ void MainOpenGLWidget::paintGL()
 
     gl.glDrawArrays(GL_TRIANGLES, 0, 36);
 
-    gl.glBindVertexArray(0);
+    gl.glBindVertexArray(0);*/
 }
 
 void MainOpenGLWidget::keyPressEvent(QKeyEvent* event)

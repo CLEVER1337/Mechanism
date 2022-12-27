@@ -20,38 +20,18 @@ void MainOpenGLWidget::initializeGL()
 {
     gl.initializeOpenGLFunctions();
 
-    cameraPos = glm::vec3(0.0, 0.0, 3.0);
-    cameraFront = glm::vec3(0.0, 0.0, -1.0);
-    cameraUp = glm::vec3(0.0, 1.0, 0.0);
-
-    InitTriangle();
-
     QTimer* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
     timer->start(0);
 
-    for(int i = 0; i < 10240; i++)
-        keys[i] = false;
-
-    deltaTime = 0.0;
-    lastFrameTime = 0.0;
-
-    this->setCursor(Qt::BlankCursor);
-
-    posX = 0;
-    posY = 0;
-
-    pitch = 0.0;
-    yaw = -90.0;
-
-    fov = 45.0;
+    //this->setCursor(Qt::BlankCursor);
 }
 
 void MainOpenGLWidget::resizeGL(int w, int h)
 {
-    screenW = w;
-    screenH = h;
-    gl.glViewport(0, 0, screenW, screenH);
+    screenSize.x = w;
+    screenSize.y = h;
+    gl.glViewport(0, 0, screenSize.x, screenSize.y);
 }
 
 void MainOpenGLWidget::paintGL()

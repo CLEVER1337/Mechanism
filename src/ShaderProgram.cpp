@@ -1,6 +1,6 @@
 #include "ShaderProgram.h"
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 ShaderProgram::ShaderProgram()
 {

@@ -9,7 +9,7 @@
 
 #include "Camera.h"
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 /*!
  * \class Controller

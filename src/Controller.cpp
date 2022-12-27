@@ -1,6 +1,6 @@
 #include "Controller.h"
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 Controller::Controller()
 {

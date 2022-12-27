@@ -5,7 +5,7 @@
 #include <QOpenGLFunctions_3_3_Core>
 #include <QImage>
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 /*!
  * \class TextureLoader

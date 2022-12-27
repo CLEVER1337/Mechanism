@@ -1,6 +1,6 @@
 #include "Camera.h"
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 Camera::Camera()
 {

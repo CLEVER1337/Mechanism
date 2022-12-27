@@ -1,6 +1,6 @@
 #include "TextureLoader.h"
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 TextureLoader::TextureLoader()
 {

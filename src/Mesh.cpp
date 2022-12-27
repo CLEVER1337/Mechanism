@@ -1,6 +1,6 @@
 #include "Mesh.h"
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 Mesh::Mesh()
 {
@@ -16,7 +16,7 @@ Mesh::Mesh(QOpenGLFunctions_3_3_Core &gl, std::vector<Vertex> vertices, std::vec
     SetupMesh(gl);
 }
 
-void Mesh::Draw(QOpenGLFunctions_3_3_Core &gl, nsUtility::ShaderProgram shaderProgram)
+void Mesh::Draw(QOpenGLFunctions_3_3_Core &gl, nsGraphicsEngine::ShaderProgram shaderProgram)
 /*Render mesh*/
 {
     unsigned int diffuseNum = 1, specularNum = 1;

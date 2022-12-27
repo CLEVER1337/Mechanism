@@ -11,7 +11,7 @@
 #include "TextureLoader.h"
 #include "Mesh.h"
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 /*!
  * \class Model
@@ -35,7 +35,7 @@ public:
      * \fn void Draw(QOpenGLFunctions_3_3_Core &gl, nsUtility::ShaderProgram shaderProgram)
      * \brief This function draw 3d model
     */
-    void Draw(QOpenGLFunctions_3_3_Core &gl, nsUtility::ShaderProgram shaderProgram);
+    void Draw(QOpenGLFunctions_3_3_Core &gl, nsGraphicsEngine::ShaderProgram shaderProgram);
 
 private:
     /*!

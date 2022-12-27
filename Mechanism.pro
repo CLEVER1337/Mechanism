@@ -26,6 +26,7 @@ SOURCES += \
     src/MainWindow.cpp \
     src/Mesh.cpp \
     src/Model.cpp \
+    src/RigidBody3D.cpp \
     src/ShaderProgram.cpp \
     src/TextureLoader.cpp
 
@@ -37,6 +38,7 @@ HEADERS += \
     include/MainWindow.h \
     include/Mesh.h \
     include/Model.h \
+    include/RigidBody3D.h \
     include/ShaderProgram.h \
     include/TextureLoader.h
 

@@ -1,6 +1,6 @@
 #include "Model.h"
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 Model::Model()
 {
@@ -12,7 +12,7 @@ Model::Model(QOpenGLFunctions_3_3_Core &gl, char* path)
     LoadModel(gl, path);
 }
 
-void Model::Draw(QOpenGLFunctions_3_3_Core &gl, nsUtility::ShaderProgram shaderProgram)
+void Model::Draw(QOpenGLFunctions_3_3_Core &gl, nsGraphicsEngine::ShaderProgram shaderProgram)
 /*Draw all meshes*/
 {
     for(unsigned int i = 0; i < meshes.size(); i++)
@@ -150,7 +150,7 @@ std::vector<TextureData> Model::LoadMaterialTexture(QOpenGLFunctions_3_3_Core &g
         {
             TextureData texture;
 
-            nsUtility::TextureLoader textureLoader(gl, str.C_Str());
+            nsGraphicsEngine::TextureLoader textureLoader(gl, str.C_Str());
 
             texture.id = textureLoader.GetTextureId();
             texture.type = typeName;

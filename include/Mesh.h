@@ -14,7 +14,7 @@
 #include "ShaderProgram.h"
 #include "TextureLoader.h"
 
-namespace nsUtility
+namespace nsGraphicsEngine
 {
 /*!
  * \struct Vertex
@@ -70,7 +70,7 @@ public:
      * \fn void Draw(QOpenGLFunctions_3_3_Core &gl, nsUtility::ShaderProgram shaderProgram)
      * \brief This function draw polygon mesh
     */
-    void Draw(QOpenGLFunctions_3_3_Core &gl, nsUtility::ShaderProgram shaderProgram);
+    void Draw(QOpenGLFunctions_3_3_Core &gl, nsGraphicsEngine::ShaderProgram shaderProgram);
 
 private:
     /*!

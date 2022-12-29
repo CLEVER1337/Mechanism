@@ -131,6 +131,7 @@ function version:upload_version()
     self:upload_physics_version()
     self:upload_graphics_version()
     self:upload_global_version()
+    self:upload_utility_version()
 end
 
 

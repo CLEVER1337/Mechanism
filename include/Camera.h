@@ -32,6 +32,8 @@ public:
     */
     Camera();
 
+    Camera(float fov, float speed);
+
     /*!
      * \fn void MoveBySide(Direction direction, float deltaTime)
      * \brief This function is change positions vectors of camera
@@ -42,6 +44,14 @@ public:
      * \brief This function is change rotation vectors of camera
     */
     void Turn(int xOffset, int yOffset);
+
+    glm::vec3 GetPos();
+
+    glm::vec3 GetFront();
+
+    glm::vec3 GetUp();
+
+    float GetFov();
 
 private:
     /*!
@@ -64,24 +74,24 @@ private:
      * \var float pitch
      * \brief Rotating around y axis
     */
-    float pitch = 0.0;
+    float pitch;
     /*!
      * \var float yaw
      * \brief Rotating around z axis
     */
-    float yaw = -90.0;
+    float yaw;
 
     /*!
      * \var float speed
      * \brief Camera's movement speed
     */
-    float speed = 0.01;
+    float speed;
 
     /*!
      * \var float fov
      * \brief Camera's field of view in degrees
     */
-    float fov = 45.0;
+    float fov;
 
     /*!
      * \fn void Update(float deltaTime)

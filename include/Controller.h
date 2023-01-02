@@ -28,7 +28,7 @@ public:
      * \fn void MouseMoveControll(Camera camera, QCursor cursor, int screenHeight, int screenWidth)
      * \brief This function is react to mouse move
     */
-    void MouseMoveControll(Camera camera, QCursor cursor, int screenHeight, int screenWidth);
+    void MouseMoveControll(Camera camera, QCursor cursor, int widgetWidth, int widgetHeight);
     /*!
      * \fn void KeyboardPressControll(Camera camera, float deltaTime)
      * \brief This function is react to keyboard keys press

@@ -4,6 +4,20 @@ namespace nsGraphicsEngine
 {
 Camera::Camera()
 {
+    fov = 45.0;
+    speed = 0.01;
+    pitch = 0.0;
+    yaw = -90.0;
+    pos = glm::vec3(0.0);
+    front = glm::vec3(0.0);
+    up = glm::vec3(0.0);
+}
+
+Camera::Camera(float fov, float speed)
+    : Camera()
+{
+    this->fov = fov;
+    this->speed = speed;
 }
 
 void Camera::MoveBySide(Direction direction, float deltaTime)
@@ -46,6 +60,22 @@ void Camera::Turn(int xOffset, int yOffset)
     tmpFront.y = sin(-glm::radians(pitch));
     tmpFront.z = cos(glm::radians(pitch)) * sin(glm::radians(yaw));
     front = glm::normalize(tmpFront);
+}
+
+glm::vec3 Camera::GetPos(){
+    return pos;
+}
+
+glm::vec3 Camera::GetFront(){
+    return front;
+}
+
+glm::vec3 Camera::GetUp(){
+    return up;
+}
+
+float Camera::GetFov(){
+    return fov;
 }
 
 void Camera::Update(float deltaTime)

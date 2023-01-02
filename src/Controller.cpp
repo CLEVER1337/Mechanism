@@ -9,29 +9,29 @@ Controller::Controller()
         keys[i] = false;
 }
 
-void Controller::MouseMoveControll(Camera camera, QCursor cursor, int screenHeight, int screenWidth)
+void Controller::MouseMoveControll(Camera camera, QCursor cursor, int widgetWidth, int widgetHeight)
 /*React to mouse move*/
 {
     /*For infinity controll(if cursor move to screen last pixel it will be moved to center)*/
     if(cursor.pos().x() == 0)
     {
-        mousePos.x -= screenWidth / 2;
-        cursor.setPos(screenHeight / 2, cursor.pos().y());
+        mousePos.x -= widgetWidth / 2;
+        cursor.setPos(widgetHeight / 2, cursor.pos().y());
     }
-    else if(cursor.pos().x() == screenWidth - 1)
+    else if(cursor.pos().x() == widgetWidth - 1)
     {
-        mousePos.x += screenWidth / 2;
-        cursor.setPos(screenHeight / 2, cursor.pos().y());
+        mousePos.x += widgetWidth / 2;
+        cursor.setPos(widgetHeight / 2, cursor.pos().y());
     }
     if(cursor.pos().y() == 0)
     {
-        mousePos.y -= screenHeight / 2;
-        cursor.setPos(cursor.pos().x(), screenWidth / 2);
+        mousePos.y -= widgetHeight / 2;
+        cursor.setPos(cursor.pos().x(), widgetWidth / 2);
     }
-    else if(cursor.pos().y() == screenHeight - 1)
+    else if(cursor.pos().y() == widgetHeight - 1)
     {
-        mousePos.y += screenHeight / 2;
-        cursor.setPos(cursor.pos().x(), screenWidth / 2);
+        mousePos.y += widgetHeight / 2;
+        cursor.setPos(cursor.pos().x(), widgetWidth / 2);
     }
 
     /*Offset between current and previous mouse's positions*/

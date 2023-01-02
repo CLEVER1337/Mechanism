@@ -23,9 +23,9 @@ void MainOpenGLWidget::initializeGL()
 
 void MainOpenGLWidget::resizeGL(int w, int h)
 {
-    screenSize.x = w;
-    screenSize.y = h;
-    gl.glViewport(0, 0, screenSize.x, screenSize.y);
+    widgetSize.x = w;
+    widgetSize.y = h;
+    gl.glViewport(0, 0, widgetSize.x, widgetSize.y);
 }
 
 void MainOpenGLWidget::paintGL()
@@ -43,8 +43,15 @@ void MainOpenGLWidget::paintGL()
 
 
 
-    for(int i = 0; i < objects.size(); i++)
-        objects[i].Draw(gl);
+    currentScene.Draw(gl);
+
+
+
+    controller.KeyboardPressControll(currentScene.GetCamera(), deltaTime);
+    controller.MouseMoveControll(currentScene.GetCamera(), this->cursor(), widgetSize.x, widgetSize.y);
+
+    //for(int i = 0; i < objects.size(); i++)
+    //    objects[i].Draw(gl);
 
     /*CameraMove();
 
@@ -133,25 +140,25 @@ void MainOpenGLWidget::paintGL()
 
 void MainOpenGLWidget::keyPressEvent(QKeyEvent* event)
 {
-    keys[event->nativeVirtualKey()] = true;
+    controller.KeyPress(event->nativeVirtualKey());
 }
 
 void MainOpenGLWidget::keyReleaseEvent(QKeyEvent* event)
 {
-    keys[event->nativeVirtualKey()] = false;
+    controller.KeyRelease(event->nativeVirtualKey());
 }
 
 void MainOpenGLWidget::wheelEvent(QWheelEvent *event)
 {
-    if(fov >= 1.0 && fov <= 45.0)
+    /*if(fov >= 1.0 && fov <= 45.0)
         fov -= event->delta() / 25;
     if(fov <= 1.0)
         fov = 1.0;
     if(fov >= 45.0)
-        fov = 45.0;
+        fov = 45.0;*/
 }
 
-void MainOpenGLWidget::MouseMove()
+/*void MainOpenGLWidget::MouseMove()
 {
     float sensetivity = 0.1;
 
@@ -301,4 +308,4 @@ void MainOpenGLWidget::CameraMove()
 
     MouseMove();
 }
-
+*/

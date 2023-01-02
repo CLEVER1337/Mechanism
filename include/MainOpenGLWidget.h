@@ -1,5 +1,5 @@
-#ifndef MAINOPENGLCLASS_H
-#define MAINOPENGLCLASS_H
+#ifndef MAINOPENGLWIDGET_H
+#define MAINOPENGLWIDGET_H
 
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions_3_3_Core>
@@ -12,10 +12,8 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 
-#include "ShaderProgram.h"
-#include "Camera.h"
 #include "Controller.h"
-#include "RigidBody3D.h"
+#include "Scene.h"
 
 class MainOpenGLWidget : public QOpenGLWidget
 {
@@ -30,19 +28,18 @@ public:
 private:
     QOpenGLFunctions_3_3_Core gl;
 
-    nsGraphicsEngine::Camera camera;
-
     nsGraphicsEngine::Controller controller;
 
     void initializeGL();
     void resizeGL(int w, int h);
     void paintGL();
 
-    glm::vec2 screenSize;
+    glm::vec2 widgetSize;
 
     float deltaTime, lastFrameTime;
 
-    std::vector<nsGraphicsEngine::RigidBody3D> objects;
+    Scene currentScene;
+    std::vector<Scene> scenes;
 };
 
-#endif // MAINOPENGLCLASS_H
+#endif // MAINOPENGLWIDGET_H

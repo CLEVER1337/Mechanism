@@ -32,6 +32,12 @@ public:
     Model(QOpenGLFunctions_3_3_Core &gl, char* path);
 
     /*!
+     * \fn void LoadModel(QOpenGLFunctions_3_3_Core &gl, std::string path)
+     * \brief This function load 3d model
+    */
+    void LoadModel(QOpenGLFunctions_3_3_Core &gl, std::string path);
+
+    /*!
      * \fn void Draw(QOpenGLFunctions_3_3_Core &gl, nsUtility::ShaderProgram shaderProgram)
      * \brief This function draw 3d model
     */
@@ -54,11 +60,6 @@ private:
     */
     std::string directory;
 
-    /*!
-     * \fn void LoadModel(QOpenGLFunctions_3_3_Core &gl, std::string path)
-     * \brief This function load 3d model
-    */
-    void LoadModel(QOpenGLFunctions_3_3_Core &gl, std::string path);
     /*!
      * \fn void ProccesNode(QOpenGLFunctions_3_3_Core &gl, aiNode* node, const aiScene* scene)
      * \brief This function adaptate node

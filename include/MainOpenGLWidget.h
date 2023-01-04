@@ -3,7 +3,6 @@
 
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions_3_3_Core>
-#include <QtDebug>
 #include <QTimer>
 #include <QTime>
 #include <QKeyEvent>

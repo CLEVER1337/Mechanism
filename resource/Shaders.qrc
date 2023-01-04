@@ -1,3 +1,5 @@
 <RCC>
-    <qresource prefix="/"/>
+    <qresource prefix="/">
+        <file>SHADERS/path_tracer.glsl</file>
+    </qresource>
 </RCC>

@@ -2,6 +2,7 @@
 
 #include "ray.glsl"
 #include "rigid_body.glsl"
+#include "reflection.glsl"
 
 #define FAR_DISTANCE 1000000.0
 #define MAX_REFLECTIONS 8

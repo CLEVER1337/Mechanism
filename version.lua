@@ -223,6 +223,8 @@ end
 
 
 function version:git_tag()
+    os.execute("git add .")
+    os.execute("git commit -m \"pre-version commit " .. self.formated.version .. "\"")
     os.execute("git tag -a " .. self.formated.version .. " -m \"" .. self.message .. "\"")
 end
 

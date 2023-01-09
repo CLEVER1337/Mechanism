@@ -1,8 +1,6 @@
 #ifndef INTERSECTION_GLSL
 #define INTERSECTION_GLSL
 
-#version 330 core
-
 #include "ray.glsl"
 #include "rigid_body.glsl"
 

@@ -2,6 +2,8 @@
 
 #define FAR_DISTANCE 1000000.0
 #define MAX_REFLECTIONS 8
+#define N_IN 0.99
+#define N_OUT 1.0
 
 uniform int u_object_count;
 
@@ -12,6 +14,7 @@ s_rigid_body objects[u_object_count];
 #include "ray.glsl"
 #include "rigid_body.glsl"
 #include "reflection.glsl"
+#include "refraction.glsl"
 
 bool ray_cast(s_ray ray, out float distance_to_object, out vec3 normal, out s_material material){
     float min_distance = FAR_DISTANCE;
@@ -53,10 +56,16 @@ vec3 path_trace(s_ray ray){
 
             new_ray.direction = transform * hemisphere_distributed_direction;
 
-            vec3 ideal_reflection = reflect(ray.direction, normal);
-            new_ray.direction = normalize(mix(new_ray.direction, ideal_reflection, material.roughness));
-
-            new_ray.origin += normal * 0.8;
+            if(is_refracted(ray.direction, normal, N_IN, N_OUT, random(), material.opacity)){
+                vec3 ideal_refraction = ideal_refract(ray.direction, N_IN, N_OUT);
+                new_ray.direction = normalize(mix(-new_ray.direction, ideal_refraction, material.roughness));
+                new_ray.origin += normal * (dot(new_ray.direction, normal)) < 0.0 ? -0.8 : 0.8;
+            }
+            else{
+                vec3 ideal_reflection = reflect(ray.direction, normal);
+                new_ray.direction = normalize(mix(new_ray.direction, ideal_reflection, material.roughness));
+                new_ray.origin += normal * 0.8;
+            }
 
             ray.origin = new_ray.origin;
             ray.direction = new_ray.direction;
